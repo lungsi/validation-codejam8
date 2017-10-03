@@ -1,0 +1,630 @@
+<html>
+	<head>
+		<title>What - Why - How of Validation</title>
+		
+		<meta name="description" content="What - Why - How of Validation">
+		<meta name="author" content="Lungsi Sharma">
+		
+		<link rel="stylesheet" href="reveal.js-master/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js-master/css/theme/black.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section>
+				    <h1>What - Why - How of Validation.</h1>
+					<p>
+						<small>HBP Codejam, Lausanne 2017</small>
+					</p>
+					<p>
+						<small>
+						by <a href="http://www.neuralgraph.com"><strong>B. Lungsi Sharma, Ph.D.</strong></a>
+						</br>
+						PostDoctoral Fellow, CNRS-UNIC
+						</br>
+						<a href="mailto:lungsi.sharma@unic.cnrs-gif.frSubject=">lungsi.sharma@unic.cnrs-gif.fr</a>
+						</small>
+					</p>
+					<img data-src="images/HBP.svg" alt="HBP" height="10%" width="10%">
+					<img data-src="images/CNRS.svg" alt="CNRS" height="10%" width="10%">
+				</section>
+				
+				
+				<section>
+					<section>
+						<img data-src="images/peterdrucker.jpg" alt="Peter Drucker" height="23%" width="15%" align="left"><blockquote cite="http://ackoffcenter.blogs.com/ackoff_center_weblog/2016/04/a-couple-of-weeks-ago-thanks-to-some-serendipitous-surfing-online-i-came-across-this-10-minute-snip-.html"><font size="6">There's a difference between doing things right and doing the right thing. </br>
+						- Peter Drucker</font></blockquote>
+					</section>
+					<section id="fragments1">
+						<img data-src="images/russellackoff.jpg" alt="Russell Ackoff" height="27%" width="15%" align="left">
+						
+						<p class="fragment">Doing things right is <span class="fragment"><strong>efficiency.</strong></span></p>
+						
+						<p><span class="fragment">Doing the right thing is</span> <span class="fragment"><strong>wisdom</strong></span> <span class="fragment">and</span> <span class="fragment"><strong>effectiveness.</strong></span></p>
+						
+						<p><span class="fragment">The righter you do the wrong thing</span> <span class="fragment">the <strong>wronger</strong> you become.</span></p>
+						
+						<p class="fragment">Why?</p>
+						
+						<p><span class="fragment">If you do the wrong thing,</span> <span class="fragment">make a mistake</span> <span class="fragment">and correct it;</span> <span class="fragment">you become wronger.</span></p>
+						
+						<p><span class="fragment">Therefore,</span> <span class="fragment">it is better to</span> <span class="fragment">do the <strong>right thing wrong</strong></span> <span class="fragment">than</span> <span class="fragment">wrong things right.</span></p>
+					</section>
+					<section>
+						<img data-src="images/gilbertchesterton.jpg" alt="G. K. Chesterton" height="27%" width="15%" align="left"><blockquote cite="http://www.gutenberg.org/cache/epub/130/pg130.txt"><font size="6">Anyone setting out to dispute anything ought always to begin by saying what he does not dispute.  Beyond stating what he proposes to prove he should always state what he does not propose to prove. </br>
+						- G. K. Chesterton, Orthodoxy</font></blockquote>
+					</section>
+				</section>
+				
+				
+				<!-- <section data-transition="slide" data-background="#ff0000" data-background-transition="zoom"> -->
+				<section data-transition="slide" data-background="#660000"  data-background-image="images/traffic-red.svg" data-background-size="5%" data-background-repeat="repeat">
+					<h3>Validation, What It Is NOT.</h3>
+					<section id="fragments2" style="font-size: 200%">
+						<p class="fragment">Validation is <strong>NOT</strong> <span class="fragment">checking that the model works</span> <span class="fragment">the way</span> <span class="fragment"><u>you think</u></span> <span class="fragment"><u>it does.</u></span></p>
+					</section>
+				</section>
+				
+				<section data-transition="slide" data-background="#003366">
+					<h3>Validation, What It IS.</h3>
+					<section id="fragments3" style="font-size: 200%">
+						<p class="fragment">Validation <strong>IS</strong> <span class="fragment">checking that the model</span> <span class="fragment"><u>does</u></span> <span class="fragment">the</span> <span class="fragment"><u>right thing.</u></span></p>
+					</section>
+					<section><img data-src="images/WhatIsValidity1.png" alt="Francis Bacon" height="80%" width="100%" style="background-color:#ffffff;"></section>
+					<section><img data-src="images/WhatIsValidity2.png" alt="Francis Bacon" height="80%" width="100%" style="background-color:#ffffff;"></section>
+					<section>Therefore distance of the simulated image (i.e, intended application) will determine whether the model is valid or not.</section>
+					<section>
+					<blockquote cite="DoD Modeling and Simulation; DoE ASC Program">Process of determining the degree to which a computer simulation is an accurate representation of real world from perspective of intended use of model. </br>- DoD Modeling and Simulation; DoE ASC Program</blockquote>
+					</section>
+				</section>
+				
+				
+				<section data-transition="slide" data-background="#003366">
+					<!-- <h3>Wrapping the model in SciUnit.</h3> -->
+					<div style="font-size: 60%">
+						<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+							<p style="text-align: left;">
+								<p><span class="fragment"><b>Validation is NOT about truth.</b></span></p>
+								<p><span class="fragment"><img data-src="images/ValidityNotTruth.gif" alt="Model" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+							</p>
+						</div>
+						<div style="width: 40%; display: inline-block;">
+							<p style="text-align: left; font-weight: bold;">
+								<p><span class="fragment"><b>Validation IS about control.</b></span></p>
+								<p><span class="fragment"><img data-src="images/ValidityIsControl.gif" alt="SciUnit Capability" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section data-transition="slide" data-background="#993d00"  data-background-image="images/traffic-amber.svg" data-background-size="5%" data-background-repeat="repeat">
+					<h3>Why Validate.</h3>
+					<section><img data-src="images/facetA_facetB_1.png" alt="Francis Bacon" height="80%" width="35%"></section>
+					<section><img data-src="images/facetA_facetB_2.png" alt="Francis Bacon" height="80%" width="35%"></section>
+					<section><img data-src="images/facetA_facetB_3.png" alt="Francis Bacon" height="80%" width="45%"></section>
+					<section><img data-src="images/verification_validation_cycle.png" alt="Francis Bacon" height="55%" width="100%"></section>
+					<section><img data-src="images/publication1.png" alt="Francis Bacon" height="70%" width="100%" style="background-color:#ffffff;"></section>
+					<section><img data-src="images/publication2.png" alt="Francis Bacon" height="70%" width="100%" style="background-color:#ffffff;"></section>
+				</section>
+				
+				
+				<section data-transition="cube" data-background="#004d00"  data-background-image="images/traffic-green.svg" data-background-size="5%" data-background-repeat="repeat">
+					<h3>How To Perform Validation.</h3>
+					<section><img data-src="images/model_maker.svg" alt="Model Maker" height="65%" width="100%" style="background-color:#004d00;"></br>Model Maker</section>
+					<section><img data-src="images/test_maker.svg" alt="Test Maker" height="65%" width="100%" style="background-color:#004d00;"></br>Model Consumer: Test Maker</section>
+					<section><img data-src="images/test_runner.svg" alt="Test Runner" height="65%" width="100%" style="background-color:#004d00;"></br>Model Consumer: Test Runner</section>
+					<section>Validation Framework </br><img data-src="images/users-vframework.svg" alt="Validation Framework" height="65%" width="100%" style="background-color:#004d00;"></section>
+					<section><img data-src="images/hvf_workflow.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#8c8c8c;"></section>
+				</section>
+				
+				
+				<section>
+					<h3>What does the model maker do?</h3>
+					<section><img data-src="images/model_maker_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;"></section>
+				</section>
+				
+				
+				<section>
+					<h3>Wrapping the model in SciUnit.</h3>
+					<div style="font-size: 75%">
+						<div style="width: 50%; display: inline-block; margin-right: 5%; vertical-align: top;">
+							<p style="text-align: left;">
+								<b>For this "real-world"</b>
+								<p><span class="fragment"><img data-src="images/sciunit00.png" alt="Bolshoi" height="50%" width="100%" style="background-color:#009933;"></span></p>
+							</p>
+						</div>
+						<div style="width: 40%; display: inline-block;">
+							<p style="text-align: left; font-weight: bold;">
+								<p><span class="fragment"><b>We've built the model.</b></span></p>
+								<p><span class="fragment"><img data-src="images/sciunit01.svg" alt="Model" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h3>Wrapping the model in SciUnit.</h3>
+					<div style="font-size: 75%">
+						<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+							<p style="text-align: left;">
+								<b>For the model</b>
+								<p><img data-src="images/sciunit01.svg" alt="Model" height="65%" width="100%" style="background-color:#ffffff;"></p>
+							</p>
+						</div>
+						<div style="width: 50%; display: inline-block;">
+							<p style="text-align: left; font-weight: bold;">
+								<p><span class="fragment"><b>Create SciUnit-Capability.</b></span></p>
+								<p><span class="fragment"><img data-src="images/sciunit02.svg" alt="SciUnit Capability" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<!-- <h3>Wrapping the model in SciUnit.</h3> -->
+					<div style="font-size: 60%">
+						<div>
+							<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>Create SciUnit-Capability by,</b>
+								</p>
+							</div>
+							<div style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(0, 102, 204);"># mansion_capability.py</span>
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; importing sciunit</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">import</span> sciunit
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; then create a class based on sciunit.Capability</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">class</span> DoorStatus( sciunit.Capability ):
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; follow this by creating a method of this class.</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">def</span> opens_door1( self ):
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>The method merely acts as a scaffold.</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">raise</span> NotImplementedError( <span style="color: rgb(255, 92, 51);">"Must</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								implement opens_door1 method."</span> )
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h3>Wrapping the model in SciUnit.</h3>
+					<div style="font-size: 75%">
+						<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+							<p style="text-align: left;">
+								<b>Once the SciUnit-Capability is created.</b>
+								<p><img data-src="images/sciunit02.svg" alt="Model" height="65%" width="100%" style="background-color:#ffffff;"></p>
+							</p>
+						</div>
+						<div style="width: 50%; display: inline-block;">
+							<p style="text-align: left; font-weight: bold;">
+								<p><span class="fragment"><b>Implement this capability in the model.</b></span></p>
+								<p><span class="fragment"><img data-src="images/sciunit03.svg" alt="SciUnit Capability" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<!-- <h3>Implement the capability in the model.</h3> -->
+					<div style="font-size: 60%">
+						<div>
+							<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>Implement the capability in the model by,</b>
+								</p>
+							</div>
+							<div style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(0, 102, 204);"># mansion_model.py</span>
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; importing sciunit</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">import</span> sciunit
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; importing the created mansion_capability</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">from</span> mansion_capability<span style="color: rgb(51, 153, 51);"> import</span> DoorStatus
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; then create a class based on sciunit.Model</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">class</span> MansionModel(
+								sciunit.Model,</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								DoorStatus ):
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; follow this by creating a method of this class, with the same name as in DoorStatus class.</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">def</span> opens_door1( self, r = <span style="color: rgb(51, 153, 51);">0</span>, F = <span style="color: rgb(51, 153, 51);">0</span>,</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								theta = <span style="color: rgb(51, 153, 51);">0</span> ):
+								</p>
+							</div>
+						</div>
+						<div>
+							<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<!-- <b>Type here</b> -->
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">return</span> (r*F*sin(theta))<span style="color: rgb(0, 102, 204);"> # torque</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h3>This wraps the model in SciUnit.</h3>
+					<img data-src="images/model_maker_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;">
+				</section>
+				
+				
+				<section data-transition="slide">
+					<h3>What does the test maker do?</h3>
+					<section><img data-src="images/test_maker_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;"></section>
+					<section><img data-src="images/test_maker2_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;"></section>
+				</section>
+				
+				
+				<section>
+					<h3>Wrapping the test in SciUnit.</h3>
+					<div style="font-size: 75%">
+						<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+							<p style="text-align: left;">
+								<b>This is done by implementing the capability (we created earlier) in the test.</b>
+							</p>
+						</div>
+						<div style="width: 50%; display: inline-block;">
+							<p style="text-align: left; font-weight: bold;">
+								<p><span class="fragment"><img data-src="images/sciunit04.svg" alt="SciUnit Capability" height="65%" width="100%" style="background-color:#ffffff;"></span></p>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<!-- <h3>Implement the capability in the test.</h3> -->
+					<div style="font-size: 50%">
+						<div>
+							<div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>Implement the capability in the test by,</b>
+								</p>
+							</div>
+							<div style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(0, 102, 204);"># mansion_door_test.py</span>
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; importing sciunit</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">import</span> sciunit
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; importing the created mansion_capability</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">from</span> mansion_capability<span style="color: rgb(51, 153, 51);"> import</span> DoorStatus
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; then create a class based on sciunit.Test</b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								<span style="color: rgb(51, 153, 51);">class</span> MansionDoor1Test(
+								sciunit.Test ):
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; set <span style="color: rgb(255, 0, 0);"><em>required_capabilities</em></span> and <span style="color: rgb(255, 0, 0);"><em>score_type</em></span></b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								required_capabilites = (DoorStatus, ) </br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								score_type = sciunit.Score.&lt;some_score&gt;
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; follow this by creating the method <span style="color: rgb(255, 0, 0);"><em>generate_prediction</em></span></b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">def</span> generate_prediction( self, model ):</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">return</span> model.opens_door1(r=<span style="color: rgb(51, 153, 51);">1.3</span>, F=<span style="color: rgb(51, 153, 51);">5</span>, theta=<span style="color: rgb(51, 153, 51);">70</span>)
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="fragment" style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+								<b>&diams; then create the method <span style="color: rgb(255, 0, 0);"><em>compute_score</em></span></b>
+								</p>
+							</div>
+							<div class="fragment" style="width: 50%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">def</span> compute_score( self, prediction, observation ):</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								<span style="color: rgb(51, 153, 51);">return</span> self.score_type( prediction ==</br>
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;
+								observation )
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h3>This wraps the test in SciUnit.</h3>
+					<img data-src="images/test_maker2_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;">
+				</section>
+				
+				
+				<section data-transition="slide">
+					<h3>What does the test runner do?</h3>
+					<img data-src="images/test_runner_hvf.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#009933;">
+				</section>
+				
+				
+				<section data-transition="slide">
+					<h4>Running the model &amp; test wrapped in SciUnit.</h4>
+					<section><img data-src="images/sciunit05_.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#cccccc;"></section>
+					<section><pre><code class="hljs" data-trim contenteditable>
+					>> from mansion_model import MansionModel
+					>> from mansion_door_test import MansionDoor1Test
+					
+					# observation data of 6 Nm torque
+					>> vtest = MansionDoor1Test( 6 )
+					
+					# get the computed score
+					>> score = vtest.judge( MansionModel )
+					</code></pre></section>
+				</section>
+				
+				
+				<section>
+					<h4>Individual tests can form a test suite.</h4>
+					<img data-src="images/sciunit06.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#ffffff;">
+				</section>
+				
+				
+				<section>
+					<img data-src="images/sciunit07.png" alt="Francis Bacon" height="90%" width="90%" style="background-color:#ffffff;">
+				</section>
+						
+				
+				<section>
+					<h3>Validation Framework Workflow</h3>
+					<section><img data-src="images/hvf_workflow.svg" alt="Francis Bacon" height="65%" width="100%" style="background-color:#8c8c8c;"></section>
+				</section>
+				
+				
+				<section>
+					<h3>Validation Framework Components</h3>
+					<section><img data-src="images/vf_components.png" alt="Francis Bacon" height="60%" width="100%" style="background-color:#808080;"></section>
+					<section><img data-src="images/vuc_home.png" alt="Francis Bacon" height="50%" width="100%" style="background-color:#808080;"></section>
+					<section><img data-src="images/HVF_Model.gif" alt="Francis Bacon" height="75%" width="100%" style="background-color:#808080;"></section>
+					<section><img data-src="images/HVF_Test.gif" alt="Francis Bacon" height="75%" width="100%" style="background-color:#808080;"></section>
+					<section>
+						<div style="font-size: 50%">
+							<div style="width: 50%; display: inline-block; margin-right: 5%; vertical-align: top;">
+								<p style="text-align: left;">
+									<pre><code class="hljs" data-trim contenteditable>
+									>> import models
+									
+									>> desired_test_uri =
+										"https://validation.brainsimulation.eu/tests/1"
+									
+									>> from hbp_validation_framework import ValidationTestLibrary
+									
+									>> test_library = ValidationTestLibrary(username="lungsi")
+									
+									>> test = test_library.get_validation_test(desired_test_uri,
+														show_plot=True)
+									
+									>> score = test.judge(getattr(models, 'Bianchi')(),
+												deep_error=True)
+																	
+									>> from hbp_validation_framework.datastores import CollabDataStore
+									
+									>> collab_storage = CollabDataStore(username="lungsi",
+											collab_id="1655",
+											base_folder="VUC_Bianchi_DepolTest_results")
+									
+									>> test_library.register(score, collab_storage)
+									</code></pre>
+								</p>
+							</div>
+							<div style="width: 40%; display: inline-block;">
+								<p style="text-align: left; font-weight: bold;">
+									<p><span class="fragment"><img data-src="images/runScript4.gif" alt="SciUnit Capability" height="60%" width="100%"></span></p>
+							</div>
+						</div>
+					</section>
+					<section><img data-src="images/HVF_Results.gif" alt="Francis Bacon" height="75%" width="100%" style="background-color:#808080;"></section>
+				</section>
+				
+				
+				<section>
+					<section><img data-src="images/hbp_constellation.png" alt="Francis Bacon" height="90%" width="40%" style="background-color:#808080;"></section>
+				</section>
+				
+				
+				<section><h3>Credits</h3>
+					<small align="left">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Andrew Davison Team</em>, CNRS-UNIC:</br>Andrew Davison, Shailesh Appukuttan, Onur Ates, Jonathan Dupperrier, Helissande Fragnaud, Pedro Garcia, Joffrey Gonin, Dominico Guarion, Elodie Legouee &amp; Lungsi Sharma.</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Peter Drucker</em> (Image). https://ffbsccn.files.wordpress.com/2010/08/peter_drucker.jpg</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Russell Ackoff</em> (Image). http://management.curiouscatblog.net/images/russell_ackoff.jpg</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>G. K Chesterton</em> (Image). https://upload.wikimedia.org/wikipedia/commons/7/75/Gilbert_Chesterton.jpg</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Shailesh Appukuttan</em> Reviewer's part of <em>Why validate?</em>.
+					</small>
+				</section>
+				
+				<section data-transition="zoom">
+					<h2>Thank you.</h2>
+				</section>
+				
+				<section data-background-image="images/end.jpg">
+                    <!-- The End -->
+				</section>
+				
+				
+			</div>
+		</div>
+		<script src="reveal.js-master/js/reveal.js"></script>
+		<script src="reveal.js-master/lib/js/head.min.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				//transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+				//transition: 'default',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js-master/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js-master/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-master/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js-master/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js-master/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js-master/plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
